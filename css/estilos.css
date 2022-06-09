@@ -43,7 +43,10 @@ body {
 
 
 /* Nav */
-
+.logo1{
+    width: 308px;
+    height: 80px;
+}
 .nav {
     --padding-container: 0;
     height: 100%;
