@@ -1,31 +1,39 @@
-(function(){
-    
-    const sliders = [...document.querySelectorAll('.testimony__body')];
-    const buttonNext = document.querySelector('#next');
-    const buttonBefore = document.querySelector('#before');
-    let value;   
-
-    buttonNext.addEventListener('click', ()=>{
-        changePosition(1);
-    });
-
-    buttonBefore.addEventListener('click', ()=>{
-        changePosition(-1);
-    });
-
-    const changePosition = (add)=>{
-        const currentTestimony = document.querySelector('.testimony__body--show').dataset.id;
-        value = Number(currentTestimony);
-        value+= add;
+let sliderSection = document.querySelectorAll(".slider_section");
+let sliderSectionLast = sliderSection[sliderSection.length - 1];
+const btnLeft = document.querySelector("#before");
+const btnRight = document.querySelector("#next");
 
 
-        sliders[Number(currentTestimony)-1].classList.remove('testimony__body--show');
-        if(value === sliders.length+1 || value === 0){
-            value = value === 0 ? sliders.length  : 1;
-        }
+slider.insertAdjacentElement('afterbegin', sliderSectionLast);
 
-        sliders[value-1].classList.add('testimony__body--show');
+function Next() {
+    let sliderSectionFirst = document.querySelectorAll(".slider_section")[0];
+    slider.style.marginLeft = "-200%";
+    slider.style.transition = "all 0.5s";
+    setTimeout(function () {
+        slider.style.transition = "none";
+        slider.insertAdjacentElement('beforeend', sliderSectionFirst);
+        slider.style.marginLeft = "-100%";
+    }, 500);
+}
+btnRight.addEventListener('click', function () {
+    Next();
+});
 
-    }
-
-})();
+function Prev() {
+    let sliderSection = document.querySelectorAll(".slider_section");
+    let sliderSectionLast = sliderSection[sliderSection.length - 1];
+    slider.style.marginLeft = "0";
+    slider.style.transition = "all 0.5s";
+    setTimeout(function () {
+        slider.style.transition = "none";
+        slider.insertAdjacentElement('afterbegin', sliderSectionLast);
+        slider.style.marginLeft = "-100%";
+    }, 500);
+}
+btnLeft.addEventListener('click', function () {
+    Prev();
+});
+setInterval(function(){
+    Next()
+},5000)
