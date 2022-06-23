@@ -6,8 +6,12 @@
     --color-2: #1BA5BA;
     --color-3: #F05F53;
     --color-4: #EF1E4B;
+    --show:none;
+    --menu:block;
 }
-
+html{
+    box-sizing: border-box;
+}
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -47,17 +51,15 @@ body {
 
 /*nav--link*/
 
-.nav_2 {
-    height: 80px;
-
-}
 
 .nav__link {
-    width: 100%;
+    
     background-color: var(--color-2);
+    width: 100%;
     height: 100px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .nav__items {
@@ -92,24 +94,24 @@ body {
     transform-origin: right;
 }
 
-.nav__menu {
-    margin-left: auto;
-    padding: 20px 0 20px 20px;
-    cursor: pointer;
-    display: none;
-    background-color: var(--color-2);
-    height: 100%;
-
+.nav_menu{
+      width: 100%;      
+      background-color: var(--color-2);
+      padding-left: 25px;
+      display: none;
 }
 
-.nav__img {
-    display: block;
+.nav__img {    
+    cursor: pointer;
+    display: none;
     width: 45px;
 }
 
 
 .nav__close {
-    display: var(--show, none);
+    display: var(--show);
+    cursor: pointer;
+    width: 45px;
 }
 
 /*Slider*/
@@ -179,41 +181,44 @@ body {
         padding: 0;
     }
 
-    .nav_2 {
-        background-color: var(--color-2);
-    }
-
-    .nav__menu {
-        display: block;
-    }
-
-    .nav__link--menu {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
+   
+    .nav_menu{
         display: flex;
+        justify-content: end;
+        justify-items: center;
+        height: 100%;
+    }    
+    .nav__img{        
+        display: var(--menu);
+    }
+   
+       
+    .nav__link--menu {
+        align-items: flex-start;
+        padding: 25px 0;
+        background-color: #1BA5BA;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: space-around;
         align-items: center;
+        height: auto;
+        margin: 0;
+        width: 100%;
         z-index: 100;
-        opacity: 0;
-        pointer-events: none;
-        transition: .100s opacity;
+        opacity:0 ;
+        display: none;
     }
-
-    .nav__link--show {
-        --show: block;
-        opacity: 1;
+    .nav__link--show{        
+        opacity:1 ;
         pointer-events: unset;
+        display: flex;
     }
-
-    .nav__close {
-        position: absolute;
-        top: 30px;
-        right: 30px;
-        width: 30px;
-        cursor: pointer;
+    .nav_menu--show{
+        --show: block;
+        --menu:none;
     }
+    .nav__items {
+        padding: 20px;
+    }  
+     
+   
 }
