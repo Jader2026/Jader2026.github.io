@@ -313,6 +313,12 @@ body {
     .nav__items {
         padding: 20px;
     }  
+    /*slider*/
+    .slider {
+        display: flex;
+        width: 400%;
+        height: 275px;
+    }
      
    /*servicios destacados*/
    .servicios_container{
