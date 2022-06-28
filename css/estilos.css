@@ -2,15 +2,16 @@
 
 :root {
     --padding-container: 100px 0;
-    --color-2: #14298e;
-    --color-1: #16a8b1;
+    --color-1: #14298e;
+    --color-2: #16a8b1;
     --color-3: #ed1f49;
     --color-4: #e36b5e;
-    --show:none;
-    --menu:block;
-    --color-title:#000000;
+    --show: none;
+    --menu: block;
+    --color-title: #000000;
 }
-*{
+
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -18,8 +19,8 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    
-    
+
+
 }
 
 /*header*/
@@ -56,7 +57,7 @@ body {
 
 
 .nav__link {
-    
+
     background-color: var(--color-2);
     width: 100%;
     height: 80px;
@@ -69,7 +70,7 @@ body {
     list-style: none;
     display: inline-block;
     line-height: 80px;
-    font-weight:600 ;
+    font-weight: 600;
 
 }
 
@@ -98,14 +99,14 @@ body {
     transform-origin: right;
 }
 
-.nav_menu{
-      width: 100%;      
-      background-color: var(--color-2);
-      padding-left: 25px;
-      display: none;
+.nav_menu {
+    width: 100%;
+    background-color: var(--color-2);
+    padding-left: 25px;
+    display: none;
 }
 
-.nav__img {    
+.nav__img {
     cursor: pointer;
     display: none;
     width: 45px;
@@ -163,96 +164,160 @@ body {
 .slider-arrow--right {
     right: 10px;
 }
+
 /*servicios destacados*/
-.servicios{
-    background: linear-gradient( #e36b5e2b, #ed1f481d); 
-     
+.servicios {
+    background: linear-gradient(#e36b5e2b, #ed1f481d);
+
 }
-.servicios__title{
+
+.servicios__title {
     padding: 25px 0 10px 20px;
-    color:var(--color-2);
+    color: var(--color-2);
     font-size: 600;
 }
-.servicios_container{
+
+.servicios_container {
     padding-bottom: 3em;
     padding-top: 1em;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 80px;
+    padding-right: 80px;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 160px;
     grid-template-areas:
-    "img1 img2 img3 img4"
-    "img5 img6 img7 img8" ;
+        "img1 img2 img3 "
+        "img4 img5 img6 ";
     gap: 0.8em;
 }
-.servicios_items{
+
+.servicios_items {
     position: relative;
     cursor: pointer;
     overflow: hidden;
 }
-.servicios_items::before{
+
+.servicios_items::before {
     content: "";
     position: absolute;
-    top:0;
+    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     background-color: var(--color-2);
     transform: scaleY(0);
     transition: transform .2s;
-    
+
 
 }
-.servicios_items:hover:before{    
+
+.servicios_items:hover:before {
     transform: scaleY(1);
     z-index: 100;
     opacity: 0.5;
-    
+
 
 }
-.servicios__link:hover{
-    color:#fff;
+
+.servicios__link:hover {
+    color: #fff;
 }
-.servicios__img{
+
+.servicios__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 25px;
 }
-.servicios_items--1{
+
+.servicios_items--1 {
     grid-area: img1;
 }
-.servicios_items--2{
+
+.servicios_items--2 {
     grid-area: img2;
 }
-.servicios_items--3{
+
+.servicios_items--3 {
     grid-area: img3;
 }
-.servicios_items--4{
+
+.servicios_items--4 {
     grid-area: img4;
 }
-.servicios_items--5{
+
+.servicios_items--5 {
     grid-area: img5;
 }
-.servicios_items--6{
+
+.servicios_items--6 {
     grid-area: img6;
 }
-.servicios_items--7{
+
+.servicios_items--7 {
     grid-area: img7;
 }
-.servicios_items--8{
+
+.servicios_items--8 {
     grid-area: img8;
 }
-.servicios__link{
+
+.servicios__link {
     position: relative;
 }
-.title__items{
+
+.title__items {
     position: absolute;
     padding: 20px 0 0 20px;
     color: inherit;
     z-index: 101;
 }
 
+/*Informacion covid*/
+
+.informacionCovid {
+    display: flex;
+    background-color: #14298e;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    padding: 50px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.info__img {
+    border-radius: 10px;
+    -webkit-box-shadow: -32px 0px 0px 33px rgba(0,0,0,0.16); 
+    box-shadow: -32px 0px 0px 33px rgba(0,0,0,0.16);
+}
+
+.contenedor__info {
+    padding-left: 120px;
+    box-sizing: border-box;
+    color: #fff;
+    width: 45%;
+}
+
+.titulo_inforacion {
+    padding-bottom: 20px;
+    font-size: 600;
+}
+
+.parrafo__informacion {
+    padding-bottom: 50px;
+    line-height: normal;
+}
+
+.boton__informacion {
+    text-decoration: none;
+    background-color: var(--color-4);
+    border-radius: 40px;
+    padding: 10px;
+    color: #fff;
+}
 
 @media (max-width:800px) {
     .nav_1 {
@@ -262,6 +327,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
     }
 
     .img_logo {
@@ -275,18 +341,19 @@ body {
         padding: 0;
     }
 
-   
-    .nav_menu{
+
+    .nav_menu {
         display: flex;
         justify-content: end;
         justify-items: center;
         height: 100%;
-    }    
-    .nav__img{        
+    }
+
+    .nav__img {
         display: var(--menu);
     }
-   
-       
+
+
     .nav__link--menu {
         align-items: flex-start;
         padding: 25px 0;
@@ -298,35 +365,53 @@ body {
         margin: 0;
         width: 100%;
         z-index: 100;
-        opacity:0 ;
+        opacity: 0;
         display: none;
     }
-    .nav__link--show{        
-        opacity:1 ;
+
+    .nav__link--show {
+        opacity: 1;
         pointer-events: unset;
         display: flex;
     }
-    .nav_menu--show{
+
+    .nav_menu--show {
         --show: block;
-        --menu:none;
+        --menu: none;
     }
+
     .nav__items {
         padding: 20px;
-    }  
+    }
+
     /*slider*/
     .slider {
         display: flex;
         width: 400%;
         height: 275px;
     }
-     
-   /*servicios destacados*/
-   .servicios_container{
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-    "img1 img2"
-    "img3 img4"
-    "img5 img6" 
-    "img7 img8";
-   }
+
+    /*servicios destacados*/
+    .servicios_container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "img1 img2"
+            "img3 img4"
+            "img5 img6"
+            "img7 img8";
+    }
+
+    /*informacion covid*/
+    .informacionCovid {
+        display: flex;
+        background-color: #14298e;
+        overflow: hidden;
+        flex-direction: column;
+
+    }
+
+    .contenedor__info {
+        color: #fff;
+        padding: 0;
+    }
 }
