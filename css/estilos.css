@@ -55,10 +55,9 @@ body {
 
 /*nav--link*/
 
-
 .nav__link {
 
-    background-color: var(--color-2);
+    background-color: var(--color-2);   
     width: 100%;
     height: 80px;
     display: flex;
@@ -88,8 +87,9 @@ body {
     bottom: 0;
     height: 3px;
     width: 100%;
-    background: white;
+    background: var(--color-1);
     transform: scaleX(0);
+    color: var(--color-1);
     transform-origin: right;
     transition: transform .2s linear;
 }
@@ -97,6 +97,7 @@ body {
 .nav__links:hover:before {
     transform: scaleX(1);
     transform-origin: right;
+    color: var(--color-1);
 }
 
 .nav_menu {
@@ -123,14 +124,13 @@ body {
 .slider_container {
     width: 100%;
     margin: auto;
-    position: relative;
     overflow: hidden;
 }
 
 .slider {
     display: flex;
     width: 400%;
-    height: 550px;
+    height: 600px;
 }
 
 .slider_section {
@@ -148,7 +148,8 @@ body {
     position: absolute;
     width: 48px;
     height: 48px;
-    top: 50%;
+    top: 60%;
+    
     cursor: pointer;
     filter: opacity(.5);
 }
@@ -173,7 +174,7 @@ body {
 
 .servicios__title {
     padding: 25px 0 10px 20px;
-    color: var(--color-2);
+    color: var(--color-1);
     font-size: 600;
 }
 
@@ -207,8 +208,7 @@ body {
     background-color: var(--color-2);
     transform: scaleY(0);
     transition: transform .2s;
-
-
+    border-radius: 25px;
 }
 
 .servicios_items:hover:before {
@@ -277,7 +277,7 @@ body {
 
 .informacionCovid {
     display: flex;
-    background-color: #14298e;
+    background-image: linear-gradient(to right, var(--color-1) 0%,var(--color-2) 100%);
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -288,10 +288,10 @@ body {
     align-items: center;
 }
 
-.info__img {
-    border-radius: 10px;
+.info__img {  
     -webkit-box-shadow: -32px 0px 0px 33px rgba(0,0,0,0.16); 
     box-shadow: -32px 0px 0px 33px rgba(0,0,0,0.16);
+    border-radius: 10px;
 }
 
 .contenedor__info {
@@ -414,4 +414,10 @@ body {
         color: #fff;
         padding: 0;
     }
+    .info__img {
+        box-shadow: none;
+        width: 220px;
+        height: 150px;
+    }
+
 }
